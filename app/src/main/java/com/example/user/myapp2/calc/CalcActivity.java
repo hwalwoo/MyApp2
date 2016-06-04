@@ -29,7 +29,7 @@ public class CalcActivity extends Activity implements View.OnClickListener{
 
     TextView tvResult;
 
-    int num1, num2;
+    int num1, num2, result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,11 +65,12 @@ public class CalcActivity extends Activity implements View.OnClickListener{
         num2 = Integer.parseInt(etVal2.getText().toString());
 
         switch (v.getId()){
-            case R.id.btn1: service.plus(num1, num2); break;
-            case R.id.btn2: service.minus(num1, num2); break;
-            case R.id.btn3: service.multi(num1, num2); break;
-            case R.id.btn4: service.divide(num1, num2); break;
-            case R.id.btn5: service.nmg(num1, num2); break;
+            case R.id.btn1: result = service.plus(num1, num2); break;
+            case R.id.btn2: result = service.minus(num1, num2); break;
+            case R.id.btn3: result = service.multi(num1, num2); break;
+            case R.id.btn4: result = service.divide(num1, num2); break;
+            case R.id.btn5: result = service.nmg(num1, num2); break;
         }
+        tvResult.setText(result+"");
     }
 }
