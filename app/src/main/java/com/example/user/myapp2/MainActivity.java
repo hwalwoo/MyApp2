@@ -20,6 +20,8 @@ public class MainActivity extends Activity {
     EditText etHeight;
     Button btRun;
     TextView tvResult;
+    double vWeight, vHeight;
+    String rstMsg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,27 +39,28 @@ public class MainActivity extends Activity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 String vName = etName.getText().toString();
-                double vWeight = Double.parseDouble(etWeight.getText().toString());
-                double vHeight = Double.parseDouble(etHeight.getText().toString());
+                vWeight = Double.parseDouble(etWeight.getText().toString());
+                vHeight = Double.parseDouble(etHeight.getText().toString());
                 int idx = (int)(vWeight/(vHeight*vHeight)*10000);
 
                 if(idx > 30){
-                    tvResult.setText("비만");
+                    rstMsg = "비만";
                 }else if(idx >= 24){
-                    tvResult.setText("과체중");
+                    rstMsg = "과체중";
                 }else if(idx >= 20){
-                    tvResult.setText("정상");
+                    rstMsg = "정상";
                 }else if(idx >= 15){
-                    tvResult.setText("저체중");
+                    rstMsg = "저체중";
                 }else if(idx >= 13){
-                    tvResult.setText("마름");
+                    rstMsg = "마름";
                 }else if(idx >= 10){
-                    tvResult.setText("영양실조");
+                    rstMsg = "영양실조";
                 }else if(idx < 10){
-                    tvResult.setText("소모증");
+                    rstMsg = "소모증";
                 }else{
-                    tvResult.setText("측정불가");
+                    rstMsg = "측정불가";
                 }
+                tvResult.setText(rstMsg);
                 return false;
             }
         });
