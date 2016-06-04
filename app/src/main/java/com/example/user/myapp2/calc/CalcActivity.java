@@ -46,21 +46,21 @@ public class CalcActivity extends Activity implements View.OnClickListener{
         etVal1 = (EditText) findViewById(R.id.etVal1);
         etVal2 = (EditText) findViewById(R.id.etVal2);
 
-        btn1 = (Button) findViewById(R.id.btn1);
-        btn2 = (Button) findViewById(R.id.btn2);
-        btn3 = (Button) findViewById(R.id.btn3);
-        btn4 = (Button) findViewById(R.id.btn4);
-        btn5 = (Button) findViewById(R.id.btn5);
-        btnMain = (Button) findViewById(R.id.btnMain);
+        //btn1 = (Button) findViewById(R.id.btn1);
+        //btn2 = (Button) findViewById(R.id.btn2);
+        //btn3 = (Button) findViewById(R.id.btn3);
+        //btn4 = (Button) findViewById(R.id.btn4);
+        //btn5 = (Button) findViewById(R.id.btn5);
+        //btnMain = (Button) findViewById(R.id.btnMain);
 
         tvResult = (TextView) findViewById(R.id.tvResult);
 
-        btn1.setOnClickListener(this);
-        btn2.setOnClickListener(this);
-        btn3.setOnClickListener(this);
-        btn4.setOnClickListener(this);
-        btn5.setOnClickListener(this);
-        btnMain.setOnClickListener(this);
+        ((Button) findViewById(R.id.btn1)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btn2)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btn3)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btn4)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btn5)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btnMain)).setOnClickListener(this);
 
     }
 

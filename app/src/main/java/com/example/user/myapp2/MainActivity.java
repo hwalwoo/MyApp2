@@ -2,6 +2,7 @@ package com.example.user.myapp2;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -64,13 +65,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 startActivity(new Intent(this, LoginActivity.class));
                 break;
             case R.id.btnDial :
-                startActivity(new Intent(this, KaupActivity.class));
+                Uri uri = Uri.parse("tel:01012341234");
+                startActivity(new Intent(Intent.ACTION_DIAL, uri));
                 break;
             case R.id.btnWeb :
-                startActivity(new Intent(this, KaupActivity.class));
+                Uri uri1 = Uri.parse("http://www.google.com");
+                startActivity(new Intent(Intent.ACTION_VIEW, uri1));
                 break;
             case R.id.btnGoogle :
-                startActivity(new Intent(this, KaupActivity.class));
+                Uri uri2 = Uri.parse("http://maps.google.com/maps?=q="+37.554264 +","+126.913598);
+                startActivity(new Intent(Intent.ACTION_VIEW, uri2));
                 break;
             case R.id.btnSearch:
                 startActivity(new Intent(this, KaupActivity.class));
