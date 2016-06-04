@@ -1,22 +1,19 @@
 package com.example.user.myapp2;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.user.myapp2.calc.CalcActivity;
+import com.example.user.myapp2.kaup.KaupActivity;
+import com.example.user.myapp2.login.LoginActivity;
+
 public class MainActivity extends Activity implements View.OnClickListener {
 
-    Button btnKaup;
-    Button btnCalc;
-    Button btnLogin;
-    Button btnDial;
-    Button btnWeb;
-    Button btnGoogle;
-    Button btnSearch;
-    Button btnSms;
-    Button btnPhoto;
+    Button btnKaup, btnCalc, btnLogin, btnDial,btnWeb, btnGoogle,btnSearch, btnSms,btnPhoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,30 +30,57 @@ public class MainActivity extends Activity implements View.OnClickListener {
         btnSms = (Button) findViewById(R.id.btnSms);
         btnPhoto = (Button) findViewById(R.id.btnPhoto);
 
-        btnKaup.setOnClickListener(this);
-        btnCalc.setOnClickListener(this);
-        btnLogin.setOnClickListener(this);
-        btnDial.setOnClickListener(this);
-        btnWeb.setOnClickListener(this);
-        btnGoogle.setOnClickListener(this);
-        btnSearch.setOnClickListener(this);
-        btnSms.setOnClickListener(this);
-        btnPhoto.setOnClickListener(this);
+        ((Button) findViewById(R.id.btnKaup)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btnCalc)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btnLogin)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btnDial)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btnWeb)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btnGoogle)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btnSearch)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btnSms)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btnPhoto)).setOnClickListener(this);
+        //btnKaup.setOnClickListener(this);
+        //btnCalc.setOnClickListener(this);
+        //btnLogin.setOnClickListener(this);
+        //btnDial.setOnClickListener(this);
+        //btnWeb.setOnClickListener(this);
+        //btnGoogle.setOnClickListener(this);
+        //btnSearch.setOnClickListener(this);
+        //btnSms.setOnClickListener(this);
+        //btnPhoto.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
 
         switch (v.getId()){
-            case R.id.btnKaup : break;
-            case R.id.btnCalc : break;
-            case R.id.btnLogin : break;
-            case R.id.btnDial : break;
-            case R.id.btnWeb : break;
-            case R.id.btnGoogle : break;
-            case R.id.btnSearch: break;
-            case R.id.btnSms: break;
-            case R.id.btnPhoto: break;
+            case R.id.btnKaup :
+                startActivity(new Intent(this, KaupActivity.class));
+                break;
+            case R.id.btnCalc :
+                startActivity(new Intent(this, CalcActivity.class));
+                break;
+            case R.id.btnLogin :
+                startActivity(new Intent(this, LoginActivity.class));
+                break;
+            case R.id.btnDial :
+                startActivity(new Intent(this, KaupActivity.class));
+                break;
+            case R.id.btnWeb :
+                startActivity(new Intent(this, KaupActivity.class));
+                break;
+            case R.id.btnGoogle :
+                startActivity(new Intent(this, KaupActivity.class));
+                break;
+            case R.id.btnSearch:
+                startActivity(new Intent(this, KaupActivity.class));
+                break;
+            case R.id.btnSms:
+                startActivity(new Intent(this, KaupActivity.class));
+                break;
+            case R.id.btnPhoto:
+                startActivity(new Intent(this, KaupActivity.class));
+                break;
         }
     }
 }
