@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.example.user.myapp2.calc.CalcActivity;
 import com.example.user.myapp2.kaup.KaupActivity;
 import com.example.user.myapp2.login.LoginActivity;
+import com.example.user.myapp2.signup.SignupActivity;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -31,6 +32,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         btnSms = (Button) findViewById(R.id.btnSms);
         btnPhoto = (Button) findViewById(R.id.btnPhoto);
 
+        ((Button) findViewById(R.id.btSignup)).setOnClickListener(this);
         ((Button) findViewById(R.id.btnKaup)).setOnClickListener(this);
         ((Button) findViewById(R.id.btnCalc)).setOnClickListener(this);
         ((Button) findViewById(R.id.btnLogin)).setOnClickListener(this);
@@ -55,6 +57,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
 
         switch (v.getId()){
+            case R.id.btnSignup :
+                startActivity(new Intent(this, SignupActivity.class));
+                break;
             case R.id.btnKaup :
                 startActivity(new Intent(this, KaupActivity.class));
                 break;
