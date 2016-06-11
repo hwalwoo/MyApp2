@@ -6,8 +6,8 @@ import android.app.Activity;
  * Created by USER on 2016-06-11.
  */
 public class MemberServiceImpl extends Activity implements MemberService {
-    //MemberDAO memberDAO = new MemberDAO(this.getApplicationContext());//chwtest
-    MemberDAO memberDAO = new MemberDAO();
+    MemberDAO memberDAO = new MemberDAO(this.getApplicationContext());//chwtest
+    //MemberDAO memberDAO = new MemberDAO();
     @Override
     public String signup(MemberBean member) {
         return memberDAO.signup(member);

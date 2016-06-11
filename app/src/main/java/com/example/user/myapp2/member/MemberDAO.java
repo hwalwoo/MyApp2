@@ -8,8 +8,8 @@ import android.util.Log;
 /**
  * Created by USER on 2016-06-11.
  */
-public class MemberDAO{//} extends SQLiteOpenHelper {
-/*chwtest
+public class MemberDAO extends SQLiteOpenHelper {
+
     public MemberDAO(Context context){//}, String name, SQLiteDatabase.CursorFactory factory, int version) {
         //super(context, name, factory, version);
         super(context, null, null, 1); //page 456
@@ -25,7 +25,7 @@ public class MemberDAO{//} extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-    }*/
+    }
 
     public String signup(MemberBean member) {
         String name = member.getName();
@@ -42,6 +42,16 @@ public class MemberDAO{//} extends SQLiteOpenHelper {
 
     public MemberBean login(MemberBean member) {
         MemberBean _member = new MemberBean();
+        _member.setId(member.getId());
+        _member.setName("홍길동");
+        _member.setPw(member.getPw());
+        _member.setEmail("hong@naver.com");
+
+        Log.i("name", member.getName());
+        Log.i("id", member.getId());
+        Log.i("pw", member.getPw());
+        Log.i("email", member.getEmail());
+
         return _member;
     }
 
@@ -53,4 +63,6 @@ public class MemberDAO{//} extends SQLiteOpenHelper {
     public String delete(MemberBean member) {
         return "삭제완료";
     }
+
+
 }

@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.user.myapp2.calc.CalcActivity;
 import com.example.user.myapp2.kaup.KaupActivity;
+import com.example.user.myapp2.login.Login2Activity;
 import com.example.user.myapp2.login.LoginActivity;
 import com.example.user.myapp2.signup.SignupActivity;
 
@@ -22,7 +23,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnKaup = (Button) findViewById(R.id.btnKaup);
+        /*btnKaup = (Button) findViewById(R.id.btnKaup);
         btnCalc = (Button) findViewById(R.id.btnCalc);
         btnLogin = (Button) findViewById(R.id.btnLogin);
         btnDial = (Button) findViewById(R.id.btnDial);
@@ -30,9 +31,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
         btnGoogle = (Button) findViewById(R.id.btnGoogle);
         btnSearch = (Button) findViewById(R.id.btnSearch);
         btnSms = (Button) findViewById(R.id.btnSms);
-        btnPhoto = (Button) findViewById(R.id.btnPhoto);
+        btnPhoto = (Button) findViewById(R.id.btnPhoto);*/
 
-        ((Button) findViewById(R.id.btSignup)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btnLogin2)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btnSignup)).setOnClickListener(this);
         ((Button) findViewById(R.id.btnKaup)).setOnClickListener(this);
         ((Button) findViewById(R.id.btnCalc)).setOnClickListener(this);
         ((Button) findViewById(R.id.btnLogin)).setOnClickListener(this);
@@ -57,6 +59,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
 
         switch (v.getId()){
+            case R.id.btnLogin2 :
+                startActivity(new Intent(this, Login2Activity.class));
+                break;
             case R.id.btnSignup :
                 startActivity(new Intent(this, SignupActivity.class));
                 break;

@@ -18,4 +18,5 @@
         completions."
     </string>
     <string name="title_activity_signup">SignupActivity</string>
+    <string name="title_activity_login2">Login2Activity</string>
 </resources>
