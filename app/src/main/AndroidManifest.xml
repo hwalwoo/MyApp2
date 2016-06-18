@@ -41,7 +41,8 @@
         <activity
             android:name=".login.Login2Activity"
             android:label="@string/title_activity_login2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".group.GroupActivity"></activity>
     </application>
 
 </manifest>

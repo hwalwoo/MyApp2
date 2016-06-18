@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.user.myapp2.calc.CalcActivity;
+import com.example.user.myapp2.group.GroupActivity;
 import com.example.user.myapp2.kaup.KaupActivity;
 import com.example.user.myapp2.login.Login2Activity;
 import com.example.user.myapp2.login.LoginActivity;
@@ -16,7 +17,7 @@ import com.example.user.myapp2.signup.SignupActivity;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
-    Button btnKaup, btnCalc, btnLogin, btnDial,btnWeb, btnGoogle,btnSearch, btnSms,btnPhoto;
+    //Button btnKaup, btnCalc, btnLogin, btnDial,btnWeb, btnGoogle,btnSearch, btnSms,btnPhoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         ((Button) findViewById(R.id.btnSearch)).setOnClickListener(this);
         ((Button) findViewById(R.id.btnSms)).setOnClickListener(this);
         ((Button) findViewById(R.id.btnPhoto)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btnGroup)).setOnClickListener(this);
         //btnKaup.setOnClickListener(this);
         //btnCalc.setOnClickListener(this);
         //btnLogin.setOnClickListener(this);
@@ -59,6 +61,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
 
         switch (v.getId()){
+            case R.id.btnGroup :
+                startActivity(new Intent(this, GroupActivity.class));
+                break;
             case R.id.btnLogin2 :
                 startActivity(new Intent(this, Login2Activity.class));
                 break;

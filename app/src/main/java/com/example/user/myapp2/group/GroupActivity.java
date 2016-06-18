@@ -1,6 +1,7 @@
 package com.example.user.myapp2.group;
 
 import android.app.Activity;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -57,6 +58,10 @@ public class GroupActivity extends Activity implements View.OnClickListener {
                 }
                 break;
             case R.id.btList:
+                db = groupDBHelper.getReadableDatabase();
+                Cursor cursor = db.rawQuery("SELECT * FROM group;", null);
+                String name = "그룹이름" + "\r\n" + "----------" + "\r\n";
+                String num = "멤버수" + "\r\n" + "----------" + "\r\n";
 
                 break;
             case R.id.btSearch:
